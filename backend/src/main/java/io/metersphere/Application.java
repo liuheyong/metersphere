@@ -11,15 +11,9 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@SpringBootApplication(exclude = {
-        QuartzAutoConfiguration.class,
-        LdapAutoConfiguration.class
-})
+@SpringBootApplication(exclude = {QuartzAutoConfiguration.class, LdapAutoConfiguration.class})
 @ServletComponentScan
-@EnableConfigurationProperties({
-        KafkaProperties.class,
-        JmeterProperties.class
-})
+@EnableConfigurationProperties({KafkaProperties.class, JmeterProperties.class})
 @EnableScheduling
 //@PropertySource(value = {"file:c:\\opt\\metersphere\\conf\\metersphere.properties"}, encoding = "UTF-8", ignoreResourceNotFound = true)
 @PropertySource(value = {"file:/opt/metersphere/conf/metersphere.properties"}, encoding = "UTF-8", ignoreResourceNotFound = true)
